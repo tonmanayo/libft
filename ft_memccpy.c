@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 08:10:24 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/10 16:37:39 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/10 12:05:36 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/10 12:21:16 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*srce;
+	unsigned char	*dest;
 
 	i = 0;
-	while (str[i] != '\0')
+	srce = (unsigned char *)src;
+	dest = (unsigned char *)dst;
+	while (i < n)
 	{
+		dest[i] = srce[i];
+		if (dest[i] == (unsigned char)c)
+			return (dest + i + 1);
 		i++;
 	}
-	return (i);
+	return (NULL);
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 08:10:24 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/10 16:37:39 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/10 12:30:51 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/10 13:56:26 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	int	i;
+	unsigned char	*str;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if (!s1 || !s2)
+		return (NULL);
+	str = (unsigned char*)malloc(sizeof(*str) * n);
+	ft_memcpy(str, s2, n);
+	ft_memcpy(s1, str, n);
+	free(str);
+	return (s1);
 }
