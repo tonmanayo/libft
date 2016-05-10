@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 08:10:24 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/09 08:13:47 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/09 10:20:46 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/09 12:25:14 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strlen(char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	
-	i = 0;
-	while (str[i] != '\0')
+	char	*save;
+	char	ch;
+
+	save = (char *)0;
+	while ((ch = *s))
 	{
-		i++;
+		if (ch == c)
+			save = (char *)s;
+		s++;
 	}
-	return (i);
+	return (save);
 }
