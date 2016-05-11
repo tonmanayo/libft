@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 11:44:19 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 09:39:36 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/11 11:13:42 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/11 11:20:01 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int	ft_isalpha(int c)
 {
-	char *a;
-	char *b;
-
-	b = (char *)needle;
-	if (*b == 0)
-		return ((char *)haystack);
-	while (*haystack != 0)
-	{
-		if (*haystack != *b)
-			continue ;
-		a = (char *)haystack;
-		while (1)
-		{
-			if (*b == 0)
-				return ((char *)haystack);
-			if (*a++ != *b++)
-				break ;
-		}
-		b = (char *)needle;
-		haystack += 1;
-	}
-	return (NULL);
+	if (ft_islower(c) || ft_isupper(c))
+		return (1);
+	return (0);
 }

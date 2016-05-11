@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   strlcat.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 11:44:19 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 09:39:36 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/11 07:26:00 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/11 08:34:26 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char *a;
-	char *b;
+	const size_t srclen = ft_strlen(src);
+	const size_t dstlen = ft_strlen(dst);
 
-	b = (char *)needle;
-	if (*b == 0)
-		return ((char *)haystack);
-	while (*haystack != 0)
+	if (dstlen == size)
+		return (size + srclen);
+	if (srclen < size - dstlen)
+		memcpy(dst + dstlen, src, srclen + 1);
+	else
 	{
-		if (*haystack != *b)
-			continue ;
-		a = (char *)haystack;
-		while (1)
-		{
-			if (*b == 0)
-				return ((char *)haystack);
-			if (*a++ != *b++)
-				break ;
-		}
-		b = (char *)needle;
-		haystack += 1;
+		memcpy(dst + dstlen, src, size - 1);
+		dst[dstlen + size - 1] = '\0';
 	}
-	return (NULL);
+	return (dstlen + srclen);
 }

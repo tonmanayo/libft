@@ -6,9 +6,13 @@
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 09:40:25 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/09 11:33:32 by tmack            ###   ########.fr       */
+/*   Updated: 2016/05/11 08:38:50 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** returns the first occurance of c
+*/
 
 char	*ft_strchr(const char *s, int c)
 {

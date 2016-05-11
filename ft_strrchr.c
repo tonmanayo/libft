@@ -6,21 +6,19 @@
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 10:20:46 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/09 12:25:14 by tmack            ###   ########.fr       */
+/*   Updated: 2016/05/11 08:59:18 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*save;
-	char	ch;
+	char *rval;
 
-	save = (char *)0;
-	while ((ch = *s))
+	rval = 0;
+	while (*s++)
 	{
-		if (ch == c)
-			save = (char *)s;
-		s++;
+		if (*s == c)
+			rval = (char *)s;
 	}
-	return (save);
+	return (rval);
 }
