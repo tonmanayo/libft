@@ -6,11 +6,11 @@
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/10 11:12:02 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/10 11:27:38 by tmack            ###   ########.fr       */
+/*   Updated: 2016/05/11 15:37:03 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	bzero(char *to, int count)
+void	ft_bzero(char *to, int count)
 {
 	while (count-- > 0)
 	{

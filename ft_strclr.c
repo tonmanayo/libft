@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 12:30:51 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 17:56:03 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/11 15:59:38 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/11 16:06:18 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+void	ft_strclr(char *s)
 {
-	unsigned char	*str;
-
-	if (!s1 || !s2)
-		return (NULL);
-	str = (unsigned char*)malloc(sizeof(*str) * n);
-	ft_memcpy(str, s2, n);
-	ft_memcpy(s1, str, n);
-	free(str);
-	return (s1);
+	ft_memset(*s, '\0', ft_strlen(*s));
 }

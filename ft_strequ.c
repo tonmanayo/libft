@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 12:30:51 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 17:56:03 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/11 17:35:45 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/11 18:04:57 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	unsigned char	*str;
+	size_t	i;
+	size_t	n;
 
-	if (!s1 || !s2)
-		return (NULL);
-	str = (unsigned char*)malloc(sizeof(*str) * n);
-	ft_memcpy(str, s2, n);
-	ft_memcpy(s1, str, n);
-	free(str);
-	return (s1);
+	i = 0;
+	n = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s[i] != '\0')
+	{
+		if (s1[i] == s2[i] && i == n)
+			return (1);
+	}
+	return (0);
 }

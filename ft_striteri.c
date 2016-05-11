@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 12:30:51 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 17:56:03 by tmack            ###   ########.fr       */
+/*   Created: 2016/05/11 16:22:09 by tmack             #+#    #+#             */
+/*   Updated: 2016/05/11 16:29:51 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned char	*str;
+	size_t i;
 
-	if (!s1 || !s2)
-		return (NULL);
-	str = (unsigned char*)malloc(sizeof(*str) * n);
-	ft_memcpy(str, s2, n);
-	ft_memcpy(s1, str, n);
-	free(str);
-	return (s1);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
