@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_bzero(char *to, int count)
 {
-	while (count-- > 0)
-	{
-		*to++ = 0;
-	}
+	ft_memset((char *)to, 0, count);
 }

@@ -1,4 +1,4 @@
-char	*ft_strtrim(char const *s)
+/*char	*ft_strtrim(char const *s)
 {
 	char *str;
 	int i, n, j, k;
@@ -22,4 +22,4 @@ char	*ft_strtrim(char const *s)
 		j++;
 	}
 	return (str);
-}
+} */
