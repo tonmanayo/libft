@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 11:12:02 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 15:37:03 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:29:55 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:30:01 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(char *to, int count)
+void			ft_bzero(void *string, size_t len)
 {
-	ft_memset((char *)to, 0, count);
+	ft_memset(string, '\0', len);
 }

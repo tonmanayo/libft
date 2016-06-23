@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 14:51:42 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 15:39:33 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:49:54 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:49:57 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void			ft_memdel(void **pointer)
 {
-	free(*ap);
-	*ap = NULL;
+	free(*pointer);
+	*pointer = NULL;
 }

@@ -5,35 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 11:44:19 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 09:39:36 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 16:07:05 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 16:07:08 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char			*ft_strstr(const char *haystack, const char *needle)
 {
-	char *a;
-	char *b;
+	size_t		inner;
 
-	b = (char *)needle;
-	if (*b == 0)
-		return ((char *)haystack);
-	while (*haystack != 0)
+	if (needle[0] == '\0')
+		return ((char*)haystack);
+	while (*haystack)
 	{
-		if (*haystack != *b)
-			continue ;
-		a = (char *)haystack;
-		while (1)
+		inner = 0;
+		while (haystack[inner] == needle[inner])
 		{
-			if (*b == 0)
-				return ((char *)haystack);
-			if (*a++ != *b++)
-				break ;
+			if (needle[inner + 1] == '\0')
+				return ((char*)haystack);
+			inner++;
 		}
-		b = (char *)needle;
-		haystack += 1;
+		haystack++;
 	}
 	return (NULL);
 }

@@ -5,29 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 08:46:07 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 12:35:18 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 16:04:25 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 16:04:29 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** coppies from source string to destination string, but only i units
-*/
+#include "libft.h"
 
-char	*ft_strncpy(char *dest, char *src, int i)
+char		*ft_strncpy(char *dest, const char *src, size_t max)
 {
-	char *s;
+	size_t	i;
 
-	s = dest;
-	while (i > 0 && *src != '\0')
+	i = 0;
+	while (src[i] != '\0' && i < max)
 	{
-		*s++ = *src++;
-		--i;
+		dest[i] = src[i];
+		i++;
 	}
-	while (i > 0)
+	while (i < max)
 	{
-		*s++ = '\0';
-		--i;
+		dest[i] = '\0';
+		i++;
 	}
 	return (dest);
 }

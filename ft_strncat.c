@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stncat.c                                           :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 06:22:03 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 07:08:39 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 16:03:49 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/17 14:33:15 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dst, const char *src, size_t n)
+char		*ft_strncat(char *first, const char *second, size_t len)
 {
-	const size_t dstlen = ft_strlen(dst);
-	const size_t srclen = ft_strlen(src);
+	char	*end;
+	size_t	i;
 
-	ft_memcpy(dst + dstlen, src, srclen + 1);
-	return (dst);
+	end = ft_strchr(first, '\0');
+	i = 0;
+	while (second[i] && i < len)
+	{
+		end[i] = second[i];
+		i++;
+	}
+	end[i] = '\0';
+	return (first);
 }

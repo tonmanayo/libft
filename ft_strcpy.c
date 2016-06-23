@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 08:37:12 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/10 18:11:48 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:59:49 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/17 14:32:26 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** copy from src to destination
-*/
+#include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char		*ft_strcpy(char *dest, const char *src)
 {
-	char *s;
+	size_t	i;
 
-	s = dest;
-	while ((*s++ = *src++) != 0)
-		;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

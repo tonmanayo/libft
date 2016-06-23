@@ -5,26 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 12:36:32 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 12:37:01 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:50:41 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:50:42 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void			*ft_memchr(const void *haystack, int needle, size_t len)
 {
-	unsigned char	*ptr;
-	unsigned char	c2;
-	int				i;
+	size_t		i;
 
 	i = 0;
-	c2 = (unsigned char)c;
-	ptr = (unsigned char *)s;
-	while (n--)
+	while (i < len)
 	{
-		if (ptr[i] == c2)
-			return (ptr + i);
+		if (needle == ((unsigned char*)haystack)[i])
+			return ((void*)haystack + i);
 		i++;
 	}
 	return (NULL);

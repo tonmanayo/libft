@@ -5,18 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 17:34:25 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/10 18:07:25 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:58:05 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/17 14:24:45 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dst, const char *src)
+char		*ft_strcat(char *first, const char *second)
 {
-	const size_t dstlen = strlen(dst);
-	const size_t srclen = strlen(src);
+	char	*end;
 
-	memcpy(dst + dstlen, src, srclen + 1);
-	return (dst);
+	end = ft_strchr(first, '\0');
+	while (*second)
+		*end++ = *second++;
+	*end = '\0';
+	return (first);
 }

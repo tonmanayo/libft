@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 11:11:28 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 11:12:36 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:33:40 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:33:43 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isupper(int c)
+#include "libft.h"
+
+int				ft_isupper(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	return (c <= 'Z' && c >= 'A');
 }

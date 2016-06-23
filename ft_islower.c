@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 11:13:03 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 11:13:27 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:33:58 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:34:02 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_islower(int c)
+#include "libft.h"
+
+int				ft_islower(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
+	return (c <= 'z' && c >= 'a');
 }

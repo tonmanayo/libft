@@ -5,22 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 12:30:51 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 17:56:03 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:50:08 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:52:43 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+void			*ft_memmove(void *dest, const void *source, size_t len)
 {
-	unsigned char	*str;
+	char	copy[len];
 
-	if (!s1 || !s2)
-		return (NULL);
-	str = (unsigned char*)malloc(sizeof(*str) * n);
-	ft_memcpy(str, s2, n);
-	ft_memcpy(s1, str, n);
-	free(str);
-	return (s1);
+	ft_memcpy(copy, source, len);
+	ft_memcpy(dest, copy, len);
+	return (dest);
 }

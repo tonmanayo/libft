@@ -5,25 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 07:53:58 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 12:34:50 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:55:48 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:56:02 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+void			ft_putnbr(int number)
 {
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr = -nbr;
-	}
-	if (nbr > 10)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + '0');
+	ft_putnbr_fd(number, 1);
 }

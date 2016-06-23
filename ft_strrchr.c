@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 10:20:46 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 08:59:18 by tmack            ###   ########.fr       */
+/*   Created: 2014/11/07 11:42:49 by tfleming          #+#    #+#             */
+/*   Updated: 2014/11/07 11:46:34 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	char *rval;
+#include "libft.h"
 
-	rval = 0;
-	while (*s++)
-	{
-		if (*s == c)
-			rval = (char *)s;
-	}
-	return (rval);
+char			*ft_strrchr(const char *haystack, int needle)
+{
+	char	*end;
+
+	end = ft_strchr(haystack, '\0');
+	while (haystack < end && *end != needle)
+		end--;
+	if (*end == needle)
+		return ((char*)end);
+	return (NULL);
 }

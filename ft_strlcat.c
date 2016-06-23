@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 07:26:00 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 08:34:26 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 16:02:01 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/17 14:31:42 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t			ft_strlcat(char *first, const char *second, size_t size)
 {
-	const size_t srclen = ft_strlen(src);
-	const size_t dstlen = ft_strlen(dst);
+	size_t		end;
+	size_t		i;
 
-	if (dstlen == size)
-		return (size + srclen);
-	if (srclen < size - dstlen)
-		memcpy(dst + dstlen, src, srclen + 1);
-	else
+	if (size == 0)
+		return (ft_strlen(second));
+	end = ft_strlen(first);
+	if (end > size - 1)
+		return (size + ft_strlen(second));
+	i = 0;
+	while (second[i] && end + i < size - 1)
 	{
-		memcpy(dst + dstlen, src, size - 1);
-		dst[dstlen + size - 1] = '\0';
+		first[i + end] = second[i];
+		i++;
 	}
-	return (dstlen + srclen);
+	first[i + end] = '\0';
+	return (end + ft_strlen(second));
 }

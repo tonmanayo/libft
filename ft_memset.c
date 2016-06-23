@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 10:48:56 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 06:21:09 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:50:23 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:50:25 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void			*ft_memset(void *destination, int int_value, size_t len)
 {
-	unsigned char	*cur;
+	size_t			i;
+	unsigned char	*location;
+	unsigned char	value;
 
-	if (len == 0)
-		return (b);
-	cur = (unsigned char *)b;
-	while (len--)
+	value = (unsigned char)int_value;
+	location = (unsigned char*)destination;
+	i = 0;
+	while (i < len)
 	{
-		*cur = (unsigned char)c;
-		if (len)
-			cur++;
+		location[i] = value;
+		i++;
 	}
-	return (b);
+	return (destination);
 }

@@ -5,21 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 16:09:40 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 16:21:05 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 16:01:23 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 16:01:26 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+void			ft_striter(char *string, void (*func)(char *))
 {
-	size_t i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (*string)
 	{
-		f(&s[i]);
-		i++;
+		func(string);
+		string++;
 	}
 }

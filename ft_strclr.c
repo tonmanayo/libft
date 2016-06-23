@@ -5,14 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 15:59:38 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 16:06:18 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:58:58 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:59:00 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void			ft_strclr(char *string)
 {
-	ft_memset((char *)s, '\0', ft_strlen((char *)s));
+	while (*string)
+	{
+		*string = '\0';
+		string++;
+	}
 }

@@ -5,17 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 14:47:24 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 14:51:22 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:34:38 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:34:41 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void			*ft_memalloc(size_t size)
 {
-	void *temp;
+	void	*fresh;
 
-	temp = (void *)malloc(size);
-	return (temp);
+	if (size == 0)
+		return (NULL);
+	fresh = malloc(size);
+	if (fresh == NULL)
+		return (NULL);
+	ft_bzero(fresh, size);
+	return (fresh);
 }

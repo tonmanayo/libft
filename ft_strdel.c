@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 15:42:51 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 16:30:18 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 16:00:12 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 16:00:16 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void			ft_strdel(char **pointer)
 {
-	free(as);
-	as = NULL;
+	free(*pointer);
+	*pointer = NULL;
 }

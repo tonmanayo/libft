@@ -5,22 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 09:40:25 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/11 08:38:50 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:58:29 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 16:06:20 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** returns the first occurance of c
-*/
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char			*ft_strchr(const char *haystack, int needle)
 {
-	const char ch = c;
-
-	while (*s != ch)
-		s++;
-	if (*s == '\0')
-		return (0);
-	return (char *)s;
+	while (*haystack && *haystack != needle)
+		haystack++;
+	if (*haystack == needle)
+		return ((char*)haystack);
+	return (NULL);
 }

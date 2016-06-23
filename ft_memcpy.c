@@ -5,24 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmack <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 11:28:05 by tmack             #+#    #+#             */
-/*   Updated: 2016/05/10 11:54:46 by tmack            ###   ########.fr       */
+/*   Created: 2016/06/05 15:49:39 by tmack             #+#    #+#             */
+/*   Updated: 2016/06/05 15:52:30 by tmack            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *s1, const void *s2, size_t n)
+void			*ft_memcpy(void *dest, const void *source, size_t len)
 {
-	char	*c1;
-	char	*c2;
+	size_t		i;
 
-	c1 = (char *)s1;
-	c2 = (char *)s2;
-	if (n == 0 || s1 == s2)
-		return (s1);
-	while (--n)
-		*c1++ = *c2++;
-	*c1 = *c2;
-	return (s1);
+	i = 0;
+	while (i < len)
+	{
+		((char*)dest)[i] = ((char*)source)[i];
+		i++;
+	}
+	return (dest);
 }
